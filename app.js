@@ -80,6 +80,18 @@ function clearInput() {
     guessInput.value = '';
 }
 
+function submitOnEnter (inputID, buttonID) {
+    document.getElementById(inputID).addEventListener("keypress", function(evento) {
+        if (evento.key === "Enter") {
+            evento.preventDefault();
+            document.getElementById(buttonID).click();
+        }
+    });
+}
+
+submitOnEnter("maxNumber", "setMaxButton");
+submitOnEnter("guessInput", "guessButton");
+
 function restartGame() {
     document.getElementById('guessButton').disabled = false;
     secretNumber = generateRandomNumber();
