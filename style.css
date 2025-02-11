@@ -1,0 +1,328 @@
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #5f17faf1;
+    --cor-desable: #808080;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(var(--cor-primaria) 0%, #06063f 33.33%, #050937 66.67%, #040119 100%);
+    width: 85rem;
+    height: 40rem;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    background-image: url("img/code.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    position: fixed;
+    background-size: cover; 
+    content: "";
+    display: block;
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.4;
+}
+
+body {
+    background-color: black;
+}
+
+.game-wrapper {
+    box-sizing: border-box;
+    width: 80rem;
+    height: 35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 24px;
+    border: 1px solid var(--cor-secundaria);
+    box-shadow: 4px 4px 20px 0px rgba(1, 8, 14, 0.15);
+    background-image: url("img/ruido.png");
+    background-size: 100% 100%;
+    position: relative; 
+}
+
+.game-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+}
+
+.game-info {
+    flex: 1;
+    padding: 0 1rem 0 2rem;
+}
+
+.game-text {
+    max-height: 80rem;
+    margin: 0rem 0 1rem 0;
+}
+
+.highlight-text {
+    color: var(--cor-secundaria);
+}
+
+.game-title {
+    width: 100%;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 4rem;
+    margin-bottom: 5rem;
+}
+
+p,
+button {
+    font-family: 'Inter', sans-serif;   
+}
+
+.game-description {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 5rem 0 1rem 0;
+}
+
+.game-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
+}
+
+
+.game-controls__primary {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+}
+
+input::placeholder {
+    color: rgb(129, 126, 126);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.guess-input {
+    width: 100%;
+    height: 2rem;
+    border-radius: 16px;
+    background-color: #000;
+    border: 1px solid var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+
+
+.button-group__primary {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+}
+
+
+.button-guess-and-restart {
+    border-radius: 16px;
+    background: var(--cor-secundaria);
+    padding: 0.7rem 1.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    margin-top: 1.2rem;
+    cursor: pointer;
+}
+
+.game-controls__secondary {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+}
+
+.max-number-input {
+    width: 100%;
+    height: 2rem;
+    border-radius: 16px;
+    background-color: #000;
+    border: 1px solid var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+
+.game-text__secondary {
+    font-size: 0.8rem;
+    color: rgb(179, 177, 177);
+    margin-bottom: 1px;
+}
+
+.set-max-btn {
+    border-radius: 16px;
+    background: var(--cor-secundaria);
+    padding: 0.7rem 1.5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border: none;
+    margin-top: 0.2rem;
+    cursor: pointer;
+}
+
+
+
+button:disabled {
+    background-color: gray;
+    pointer-events: none;
+}
+
+.game-character {
+    width: 49.7%;
+    height: 100%;
+    border-radius: 0 0 24px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+button:hover {
+     box-shadow: 0 0 2px var(--cor-secundaria), 
+                0 0 7px var(--cor-secundaria), 
+                0 0 10px var(--cor-secundaria);
+    transform: scale(1.05);
+}
+
+
+  @media screen and (max-width: 1250px) {
+
+    body {
+        width: auto; 
+    }
+
+    .game-wrapper {
+        justify-content: center;
+        width: 85%;
+    }
+
+    .game-info {
+        flex: 1;
+        padding: 0 1rem 0 1rem;
+        bottom: 0;
+    }
+
+    .game-text {
+        margin: 0rem 0 1rem 0;
+    }
+
+    .game-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .game-description {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        margin: 4rem 0 1rem 0;
+        text-align: center;
+    }
+
+    .game-controls {
+        flex-direction: column;
+    }
+
+    
+    .game-controls__primary {
+        width: 100%;
+    }
+
+    .guess-input {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        padding: clamp(1.1rem, 3vw, 1.5rem);
+    }
+
+    .max-number-input {
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        padding: clamp(1.1rem, 3vw, 1.5rem);
+    }
+
+
+    input::placeholder {
+        font-size: clamp(1rem, 3vw, 1.3rem);
+    }
+
+    .button-guess-and-restart {
+        height: 2.5rem;
+        font-size: clamp(1rem, 3vw, 1.3rem);
+        padding: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .game-controls__secondary {
+        width: 100%;
+    }
+
+    .set-max-btn {
+        height: 2.5rem;
+        font-size: clamp(1rem, 3vw, 1.3rem);
+        padding: 0.5rem;
+        margin-top: 0.3rem;
+    }
+
+    .game-character {
+        display: none;
+    }
+
+}
+
+ @media screen and (max-width: 650px) {
+
+    input::placeholder {
+        font-size: clamp(0.8rem, 3vw, 1.5rem);
+    }
+
+    .guess-input {
+        font-size: clamp(0.9rem, 3vw, 1.5rem);
+    }
+
+    .max-number-input {
+        font-size: clamp(0.9rem, 3vw, 1.5rem);
+    }
+
+    .button-guess-and-restart {
+        height: 2.2rem;
+        margin-top: 0.9rem;
+        font-size: clamp(0.7rem, 3vw, 1.3rem);
+    }
+
+    .set-max-btn {
+        height: 2.2rem;
+        margin-top: 0.3rem;
+        font-size: clamp(0.7rem, 3vw, 1.3rem);
+    }
+
+
+ }
+
+ 
+ 

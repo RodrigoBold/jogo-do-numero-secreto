@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Game</title>
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="game-content">
+            <div class="game-info">
+                <div class="game-text">
+                    <h1 class="game-title"></h1>
+                    <p class="game-description"></p>
+                </div>
+                <div class="game-controls">
+                    <div class="game-controls__primary">
+                            <input type="number" min="1" max="9999" class="guess-input" id="guessInput" placeholder="Digite sua tentativa aqui">
+                        <div class="button-group__primary">
+                            <button onclick="checkGuess()" id="guessButton" class="button-guess-and-restart">Chutar</button>
+                            <button onclick="restartGame()" id="restartButton" class="button-guess-and-restart" disabled>Novo jogo</button>
+                        </div>
+                    </div>
+                    <div class="game-controls__secondary">
+                        <input type="number" min="1" max="9999" class="max-number-input" id="maxNumber" placeholder="NúmMáx">
+                        <p class="game-text__secondary">* Insira o número máximo aqui!</p>
+                        <button onclick="setMaxNumber()" id="setMaxButton" class="set-max-btn">Inserir</button>
+                    </div>
+                </div>
+            </div>
+            <img src="./img/personagem.png" alt="Uma pessoa olhando para a esquerda" class="game-character" />
+        </div>
+    </div>
+    <script src="app.js" defer></script>
+</body>
+</html>
