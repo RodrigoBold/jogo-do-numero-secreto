@@ -42,7 +42,8 @@ function checkGuess() {
         return; 
     }
     if (playerGuess == secretNumber) {
-        displayTextOnScreen('h1', `Acertou! O <strong class="highlight-text">número secreto</strong> era <strong class="highlight-text">${secretNumber}!</strong>`);
+        displayTextOnScreen('h1', `Acertou! O <strong class="highlight-text">número secreto</strong> era ` +
+        `<strong class="highlight-text">${secretNumber}!</strong>`);
         let attemptWord = attempts > 1 ? 'tentativas' : 'tentativa';
         let attemptsMessage = `Você descobriu com ${attempts} ${attemptWord}!`;
         displayTextOnScreen('p', attemptsMessage);
@@ -80,6 +81,15 @@ function clearInput() {
     guessInput.value = '';
 }
 
+function restartGame() {
+    secretNumber = generateRandomNumber();
+    clearInput();
+    attempts = 1;
+    showInitialMessage();
+    document.getElementById('restartButton').setAttribute('disabled', true);
+    document.getElementById('guessButton').disabled = false;
+}
+
 function submitOnEnter (inputID, buttonID) {
     document.getElementById(inputID).addEventListener("keypress", function(evento) {
         if (evento.key === "Enter") {
@@ -91,13 +101,3 @@ function submitOnEnter (inputID, buttonID) {
 
 submitOnEnter("maxNumber", "setMaxButton");
 submitOnEnter("guessInput", "guessButton");
-
-function restartGame() {
-    document.getElementById('guessButton').disabled = false;
-    secretNumber = generateRandomNumber();
-    clearInput();
-    attempts = 1;
-    showInitialMessage();
-    document.getElementById('restartButton').setAttribute('disabled', true);
-    document.getElementById('guessButton').disabled = false;
-}
